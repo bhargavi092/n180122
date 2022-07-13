@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>middle</title>
+    <link rel="stylesheet" href="middle.css">
+</head>
+<body>
+    <div class="middle_div">
+            <div id="left_div" class="sub_divs">
+                <div >
+                    <form id="Myform">
+                        <input type="text" id="first" placeholder="type here...">
+                        <input type="submit" value="Add" id="submit" >
+                        <input type="text" id="filter">
+                    </form>
+                </div>
+                <ul id="lists">
+                    <li>N180122 <button class="delete">X</button></li>
+                    <li>N180750 <button class="delete">X</button></li>
+                    <li>N180114 <button class="delete">X</button></li>
+                    <li>N180622 <button class="delete">X</button></li>
+                    <li>N180632 <button class="delete">X</button></li>
+                    <li>N180718 <button class="delete">X</button></li>
+                </ul>
+            </div>
+            <div id="mid_div" class="sub_divs">
+                <div class="transparent"></div>
+            <div class="slider">
+                <div class="slides">
+                    
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <div class="slide first">
+                        <img src="images1/IMG_20200916_112946.jpg" >
+                    </div>
+                    <div class="slide">
+                        <img src="images1/IMG_20210522_165206.jpg" >
+                    </div>
+                    <div class="slide">
+                        <img src="images1/IMG_20210426_171914.jpg" >
+                    </div>
+                    <div class="slide">
+                        <img src="images1/IMG_20200916_112830.jpg" >
+                    </div>
+                </div>
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+            </div>
+            </div>
+            <div id="right_div" class="sub_divs">
+                <ul>
+                    <li><details>
+                        <summary>notification1</summary>
+                        <p>notification1 data</p>
+                    </details></li>
+                    <li><details>
+                        <summary>notification2</summary>
+                        <p>notification2 data</p>
+                    </details></li>
+                    <li><details>
+                        <summary>notification3</summary>
+                        <p>notification3 data</p>
+                    </details></li>
+                    <li><details>
+                        <summary>notification4</summary>
+                        <p>notification4 data</p>
+                    </details></li>
+                    <li><details>
+                        <summary>notification5</summary>
+                        <p>notification5 data</p>
+                    </details></li>
+                </ul>
+            </div>
+        </div>
+        <div class="last_div">
+            <script>
+
+                // image slider ------>div2
+                var counter=1;
+                setInterval(function(){
+                    document.getElementById('radio'+ counter).checked=true;
+                    console.log(document.getElementById('radio'+ counter).checked);
+                    counter++;
+                    if(counter>4){
+                        counter=1
+                    }
+                },3000);
+
+                // filtering  ------> div1
+                console.log('ji')
+
+                var myform=document.getElementById("Myform")
+                myform.addEventListener('submit',addItem,false);
+                
+                var lists=document.getElementById("lists");
+                lists.addEventListener('click',removeItem,false);
+                
+                var filter=document.getElementById("filter");
+                filter.addEventListener('keyup',filterItem,false);
+                
+                function addItem(e){
+                    e.preventDefault();
+                    var t=document.getElementById("first").value;
+                    
+                    // creating li 
+                    var l=document.createElement("li");
+                    var text=document.createTextNode(t);
+
+                    l.appendChild(text);  //appending text to li
+
+                    var btn=document.createElement("button")
+                    btn.setAttribute("class","delete")  // to aquire delete class properties
+                    var btntext=document.createTextNode("X");
+                    btn.appendChild(btntext);
+
+                    l.appendChild(btn);
+
+                    lists.appendChild(l);
+
+                }
+
+                function removeItem(e){
+                    if(e.target.classList.contains('delete')){
+                        var li=e.target.parentElement;
+                        lists.removeChild(li);
+                    }
+                }
+
+                function filterItem(e){
+                    var text=e.target.value.toLowerCase();
+                    var items=document.getElementsByTagName("li");
+                    Array.from(items).forEach((item)=>{
+                        itemValue=item.firstChild.textContent;
+                        if(itemValue.toLowerCase().indexOf(text)!=-1){
+                            item.style.display="block";
+                        }
+                        else{
+                            item.style.display="none";
+                        }
+                    })
+                }
+            </script>
+</body>
+</html>

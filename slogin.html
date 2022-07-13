@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="">
+    <style >
+        .Container{
+            /* all elements center */
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            
+
+            margin: 70px auto;
+            padding: 30px;
+            width: 300px;
+            height: 150px;
+            background-color: rgb(5, 139, 192);
+            border: 1px solid rgb(70, 52, 233);
+            box-shadow: 10px 10px 10px rgb(52, 98, 141);
+            border-radius: 15px;
+            color: white;
+        }
+        .form table input,.form table label{
+            margin: 0px 20px ;
+        }
+        .link{
+            transform: translate(0%,40%);
+        }
+
+        @media screen and  (max-width:400px) {
+            .Container{
+                /* width: auto; */
+                /* margin: 200px auto; */
+                width: 280px;
+                height: 150px;
+            }
+        }
+            @media screen and (max-width:366px) {
+            .Container{
+                width: 230px;
+                height: 150px;
+            }
+            .form table input,.form table label{
+                margin: 0px 10px ;
+             }
+        }
+        @media screen and (max-width:316px) {
+            .Container{
+                width: 200px;
+                height: 150px;
+            }
+            .form table input,.form table label{
+                margin: 0px 10px ;
+             }
+        }
+        @media screen and (max-width:280px) {
+            /* .Container{
+                width: 200px;
+                height: 150px;
+            } */
+            .form table input,.form table label{
+                margin: 0px 0px ;
+             }
+        }
+    </style>
+</head>
+<body>
+
+        <div class="Container">
+        <form action="" method="" class="form" onsubmit="return Validate();">
+                <table>
+                    <tr>
+                        <td><label>ID no:</label></td><td><input type="text" placeholder=" N18XXXX " id="name" ></td>
+                    </tr>
+                    <tr><td colspan="2"><p id="userError"></p></td></tr>
+                    <tr>
+                        <td><label>Password:</label></td><td><input type="password" placeholder="password here" id="password"></td>
+                    </tr>
+                    <tr><td colspan="2"><p id="passError"></p></td></tr>
+                    <tr>
+                        <td> <input type="submit" value="Submit"></td><td> <input type="reset"></td>
+                    </tr>
+                    <tr><td colspan="2" class="link"><a href="register.html">  click </a>  here to go registration form</td></tr>
+                </table>
+        </form>
+        </div>
+        <!-- <span class="link">Haven't registered yet? <a href="register.html">  click </a>  here to go registration form</span> -->
+        <script>
+            var Name=document.getElementById("name");
+            var Password=document.getElementById("password");
+            // var r1=/^[n/N]+[a-zA-Z0-9]$/;
+            var r1=/^[n/N]\d{6}$/i;
+            function Validate(){
+                if(Name.value==''){
+                    document.getElementById("userError").innerHTML="username shouldn't be empty";
+                    Name.focus();
+                    return false;
+                }else if(r1.test(Name.value)==false){
+                    document.getElementById("userError").innerHTML="Name should start with n/N  only";
+                    Name.focus()
+                    return false;
+                }else{
+                    document.getElementById("userError").innerHTML="";
+                }
+                if(Password.value==''){
+                    document.getElementById("passError").innerHTML="password shouldn't be empty";
+                    Password.focus();
+                    return false;
+                }else if(Password.value.length<3){
+                    document.getElementById("passError").innerHTML="Password should have atleast 3 characters ";
+                    Password.focus()
+                    return false;
+                }else{
+                    document.getElementById("passError").innerHTML="";
+                }
+                
+
+                return true;
+        }
+    </script>
+</body>
+</html>

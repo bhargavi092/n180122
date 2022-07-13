@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="form" action="#" method="post">
+                <table >
+                    <tr><td colspan="2" id="heading">Registration</td></tr>
+                    <tr>
+                        <td><label>FIRST NAME</label></td>
+                        <td>
+                            <input class="width"  type="text" id="fn" required onkeypress="remove()" >
+                            <p id="msg1"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>MIDDLE NAME</label></td>
+                        <td>
+                            <input type="text" id="mn" class="width" >
+                            <p id="msg2"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>FULL NAME</label></td>
+                        <td><input type="text" id="ln" readonly class="width"></td>
+                    </tr>
+                    <tr>
+                        <td><label>PH.NO TYPE</label></td>
+                        <td id="check">
+                            INDIA <input type="checkbox" id="in">
+                            USA <input type="checkbox" id="us"> <br>
+                        </td>
+                        <td><p id="msg3"></p></td>
+                    </tr>
+                    <tr>
+                        <td><label>PASSWORD</label></td>
+                        <td><input type="password" id="p" class="width"><i class="bi bi-eye-fill" id="eye" onclick="show()">e</i><p id="msg4"></p></td>
+                    </tr>
+                    <tr>
+                        <td><label>HOBBIES</label></td>
+                        <td>ACTING <input type="checkbox" id="h1"> DRAWING <input type="checkbox" id="h2"><br><br> READING <input type="checkbox" id="h3"> WRITING <input type="checkbox" id="h4"><p id="msg5"></p></td><br>
+
+                    </tr>
+
+                    <tr>
+                        <td><label>PHOTO</label></td>
+                        <td>
+                            <input type="file" id="file" accept="image/*" >
+                            <p id="msg6"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>EMAIL</label></td>
+                        <td>
+                            <input type="text" id="mail" class="width">
+                            <p id="msg7"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>DOB</label></td>
+                        <td>
+                            <input type="date">
+                            <p id="msg8"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>ADDRESS</label></td>
+                        <td>
+                            <textarea id="address" class="width"></textarea>
+                            <p id="msg8"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="checkbox" id="term"  onclick="enable()"><label class="width"> I AGREE TO THE TERMS OF THE COMPANY</label> </td>
+                    </tr>
+                    <tr>
+                        <td><input type="reset" onclick="return confirm()" class="buttons"></td>
+                        <td><input type="submit" editable="true" disabled="true" value="submit" id="submit" class="buttons"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="register.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

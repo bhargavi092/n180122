@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="website project">
+    <meta name="keyword" content="project, small project, website project, project idea">
+    <meta name="author" content="Bhargavi Vallabhapurapu">
+    <meta http-equiv="catch-control" content="catch-control:max-age=50000,public">
+    <meta property="og:title" content="project">
+    <meta property="og:url" content="#">
+    <meta property="og:description" content="website project">
+    <title>Project</title>
+    <link rel="icon" href="" type="text/icon">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <a href="#" id="top"></a>
+    <div class="main_div">
+        <div class="s_div">
+            <div id="img_div" class="inline">
+                <img src="images1/bhargavi.jpg" height="80px" width="80px" class="inline">
+            
+                <div id="t_div" class="inline">
+                    <b>V.Bhargavi<b><br>
+                    <b>N180122</b><br>
+                    <b>CSE-01<b>
+                </div>
+            </div>
+            <h1 class="inline">Demo website </h1>
+            <div id="toggle_div" >
+                 <b id="toggle" class="inline" onclick="Clicked();"> &equiv;</b>
+            </div>
+           <ul class="vlist" id="display" style="display:none" >
+            <li class="vl1" ><i class="fa fa-home "></i> <a href="index.html">Home</a></li>
+            <li class="vl1"><i class="fa fa-book "></i><a href="login.html" target="frame"> Exams</a>
+                <!-- <ul class="vsub_nav1">
+                    <li><a href="#">Student</a></li>
+                    <li><a href="#">Faculty</a></li>
+                </ul></li> -->
+            <li class="vl1"><i class="fa fa-wrench "></i> <a href="#">Branch</a><span id="vdarrow">&#9660;</span>
+                <ul class="vsub_nav1">
+                    <li id="vcse"> <a href="#">CSE</a><span id="vrarrow">&#9660;</span>
+                        <ul class="vsub_nav2">
+                            <li><a href="slogin.html" target="frame">Student</a></li>
+                            <li><a href="flogin.html" target="frame">Faculty</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ECE</a></li>
+                    <li ><a href="#">MEC</a>
+                       
+                    </li>
+                </ul></li>
+            <li class="vl1"><i class="fa fa-phone "></i> <a href="contactUs.html" target="frame">Contact us</a></li>
+            <li class="vl1"><i class="fa fa-user"></i><a href="aboutUs.html" target="frame"> About us</a></li>
+        </ul>
+
+
+           
+        </div>
+        <div class="nav_div" id="inline-block">
+            <nav class="navigation_bar">
+                <ul class="list">
+                    <li class="l1"><i class="fa fa-home "></i> <a href="index.html" >Home</a></li>
+                    <li class="l1"><i class="fa fa-book "></i><a href="login.html" target="frame"> Exams</a>
+                        <!-- <ul class="sub_nav1">
+                            <li><a href="#">Student</a></li>
+                            <li><a href="#">Faculty</a></li>
+                        </ul></li> -->
+                    <li class="l1"><i class="fa fa-wrench "></i> <a href="#">Branch</a><span id="darrow">&#9660;</span>
+                        <ul class="sub_nav1">
+                            <li id="cse"> <a href="#">CSE</a><span id="rarrow">&#9660;</span>
+                                <ul class="sub_nav2">
+                                    <li><a href="slogin.html" target="frame">Student</a></li>
+                                    <li><a href="flogin.html" target="frame">Faculty</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">ECE</a></li>
+                            <li ><a href="#">MEC</a>
+                               
+                            </li>
+                        </ul></li>
+                    <li class="l1"><i class="fa fa-phone "></i> <a href="contactUs.html" target="frame">Contact us</a></li>
+                    <li class="l1"><i class="fa fa-user"></i><a href="aboutUs.html" target="frame" > About us</a></li>
+                </ul>
+            </nav>
+        </div>
+            <iframe src="middle.html" height="370px" width="100%" name="frame"></iframe>
+            <footer class="footer">
+               <!-- <ul class="social">  -->
+                    <li class="social-items">&copy; copyright</li>
+                    <li class="social-items"> <a href="#"><i class="fab fa-instagram"></i>  </a></li>
+                    <li class="social-items"> <a href="#"><i class="fab fa-snapchat"></i>  </a></li>
+                    <li class="social-items"><a href="#"><i class="fab fa-facebook-f"></i>  </a></li>
+                    <li class="social-items"><a href="#"><i class="fab fa-twitter"></i>  </a></li>
+                    <li id="vc" class="social-items">View Count:
+                        <img src="https://hitwebcounter.com/counter/counter.php?page=8011133&style=0001&nbdigits=5&type=page&initCount=0"
+                         title="Free Counter" Alt="web counter"   border="0" /></a> </li>
+                </ul>
+                <!-- <a href="#top" class="social-items" ><img src="images/curved-white-arrow-png-0.png" height="50px" width="50px" id="arrow">  </a> -->
+            </footer>
+        </div>
+    </div>
+    <script>
+        var c=document.getElementById('display');
+        var v=document.getElementById("inline-block");
+        function Clicked(){
+            console.log(c.style.display)
+            if(c.style.display=="none"){
+                console.log('he')
+                c.style.display="block";
+                v.style.visibility="hidden";
+
+            }
+            else{
+                c.style.display="none";
+                v.style.visibility="visible";
+            }
+        }
+    </script>
+</body>
+</html>
